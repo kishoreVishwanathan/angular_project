@@ -1,0 +1,52 @@
+    <div class="containers">
+        <div >
+            <h3>Fees Tracking System</h3>
+            <div class='withForm'>
+                <div class='d-flex'>
+                    <div>
+                        <label>Name</label>
+                        <input type="hidden">
+                        <input type="text" class='form-control' [(ngModel)]="name" autocomplete="off">
+                    </div>
+                    <div>
+                        <label>Phone</label>
+                        <input type="text" [(ngModel)]="phone" class='form-control'>
+                    </div>
+                    <div>
+                        <label>Status</label>
+                        <select class="form-control" [(ngModel)]="status" >
+                        <option   value='Paid'>Paid</option>
+                        <option   value='Due'>Due</option>
+                     </select>
+                    </div>
+
+                    <div class='buttn' id="button">
+                        <input type="button"  class='btn btn-success'(click)='insertIntoDB()' [value]="studentsArray !== null ? 'Add' : 'Update'">
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <h3>FEES DETAILS</h3>
+        <div class='tableHolder'>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr *ngFor=' let x of studentsArray,let i=index '>
+                    <td>{{x.name}}</td>
+                    <td>{{x.phone}}</td>
+                    <td>{{x.status}}</td>
+                    <th>
+                        <button class='btn btn-primary' (click)='updateDB(i,x.name,x.phone,x.status)'>Update</button>
+                        <button class='btn btn-danger' (click)='deleteDB(i)'>Delete</button>
+                    </th>
+                </tr>
+
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,21 @@
+.heading {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: blue;
+}
+.main-container {
+ 
+}
+.button {
+    width: 10%;
+    height: 50px;
+    margin: 2%;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    background-color: darkcyan;
+    border-radius: 16px;
+    outline: none;
+    margin-left: 80%;
+}
